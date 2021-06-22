@@ -1,1 +1,1 @@
-# Draft product card for eshop
+## Free to use eshop components
