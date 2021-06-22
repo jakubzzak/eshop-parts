@@ -1,0 +1,14 @@
+.input,
+.input:focus {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    background-color: #eee;
+
+    /*@apply outline-none focus:outline-none border-none*/
+}
+
+.no-outline:focus {
+    outline: none;
+}

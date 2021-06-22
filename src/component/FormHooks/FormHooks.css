@@ -1,0 +1,11 @@
+input,
+input:focus {
+    outline: coral;
+    border: coral;
+}
+
+.aa {
+    outline: coral;
+    border: coral;
+
+}

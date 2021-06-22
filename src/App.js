@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { Switch, Route, useLocation } from 'react-router-dom'
+import Cards from "./pages/Cards/Cards";
+import Checkout from "./pages/Checkout/Checkout";
+import Home from "./pages/Home/Home";
+import { ArrowLeft } from '@material-ui/icons'
+
 
 function App() {
+
+  const { pathname } = useLocation()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <div className="h-full">
+        <div className="flex items-center justify-center h-32">
+          <div className="font-extra-bold">
+            {pathname.substr(pathname.lastIndexOf('/') + 1, ).toUpperCase() &&
+            <a href={'/'} className="animate-bounce">
+              <ArrowLeft />
+            </a>
+            }
+            { pathname.substr(pathname.lastIndexOf('/') + 1, ).toUpperCase() || 'HOME' }
+          </div>
+        </div>
+        <div className="mx-auto mb-10 container border rounded">
+          <Switch>
+            <Route path="/cards">
+              <Cards/>
+            </Route>
+            <Route path="/checkout">
+              <Checkout/>
+            </Route>
+            <Route path="/">
+              <Home/>
+            </Route>
+          </Switch>
+        </div>
+      </div>
+  )
 }
 
 export default App;
