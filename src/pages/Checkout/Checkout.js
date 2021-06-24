@@ -23,6 +23,7 @@ const Checkout = () => {
     { title: 'Nike hoodie', size: 'L', color: 'orange', price: 100, quantity: 4 },
     { title: 'Gucci socks', size: 'M', color: 'green', price: 150, quantity: 2 },
     { title: 'Adidas hoodie', size: 'XS', color: 'red', price: 480, quantity: 3 },
+    { title: 'Hodinky paradne', size: 'M', color: 'blue', price: 1280, quantity: 1 },
   ]
 
   const deliveryMethods = [
@@ -231,13 +232,13 @@ const Checkout = () => {
             <motion.div initial="hidden"
                         animate="show"
                         variants={ variants }
-                        className="border rounded h-full shadow-md"
+                        className="border rounded sticky top-5 shadow-md"
             >
               <div className="flex flex-col justify-between h-full">
-                <div className="divide-y">
-                  <div className="flex items-center justify-center p-3 font-bold">
+                  <div className="flex items-center justify-center p-3 font-bold shadow-b-md">
                     My cart
                   </div>
+                <div className="divide-y max-h-72 overflow-scroll">
                   { cartItems.map((item, index) => (
                     <motion.div key={ index }
                                 variants={ itemVariants }
